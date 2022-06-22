@@ -31,10 +31,17 @@
 // }
 
 // impl Iterator for Fibonacci {
-//     type Item = TODO!;
+//     type Item = u32;
 
 //     fn next(&mut self) -> Option<u32> {
-//         todo!()
+//         let _next = self.a + self.b;
+
+//         if self.b > 0 {
+//             self.a = self.b;
+//         }
+//         self.b = _next;
+
+//         Some(self.a)
 //     }
 // }
 
@@ -73,9 +80,9 @@
 // Yêu cầu: Sửa lỗi Lifetime
 
 // use std::fmt;
-// struct StrDisplayable(Vec<&str>);
+// struct StrDisplayable<'a>(Vec<&'a str>);
 
-// impl fmt::Display for StrDisplayable {
+// impl<'a> fmt::Display for StrDisplayable<'a> {
 //     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
 //         for v in &self.0 {
 //             write!(f, "\n{}", v)?;
